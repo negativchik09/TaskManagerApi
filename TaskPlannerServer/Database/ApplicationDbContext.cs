@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace StasCourseProject.Database;
+namespace TaskPlannerServer.Database;
 
 public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 {

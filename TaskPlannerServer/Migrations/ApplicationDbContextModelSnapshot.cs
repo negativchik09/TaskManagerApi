@@ -3,19 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StasCourseProject.Database;
+using TaskPlannerServer.Database;
 
 #nullable disable
 
-namespace StasCourseProject.Migrations
+namespace TaskPlannerServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221029183523_Initial")]
-    partial class Initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,7 +220,7 @@ namespace StasCourseProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("StasCourseProject.Database.Task", b =>
+            modelBuilder.Entity("TaskPlannerServer.Database.Task", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

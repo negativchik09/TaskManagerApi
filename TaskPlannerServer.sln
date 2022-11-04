@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StasCourseProject", "StasCourseProject\StasCourseProject.csproj", "{2728CF61-F979-4E6E-B3ED-35BB439EA8AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlannerServer", "TaskPlannerServer\TaskPlannerServer.csproj", "{2728CF61-F979-4E6E-B3ED-35BB439EA8AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

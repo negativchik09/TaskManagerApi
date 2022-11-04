@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StasCourseProject.Database;
+using TaskPlannerServer.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;

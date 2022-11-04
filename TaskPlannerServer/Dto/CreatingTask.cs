@@ -1,4 +1,4 @@
-﻿namespace StasCourseProject.Dto;
+﻿namespace TaskPlannerServer.Dto;
 
 public class CreatingTask
 {

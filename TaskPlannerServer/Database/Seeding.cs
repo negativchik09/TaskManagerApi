@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using StasCourseProject.Auth;
+using TaskPlannerServer.Auth;
 
-namespace StasCourseProject.Database;
+namespace TaskPlannerServer.Database;
 
 public static class Seeding
 {

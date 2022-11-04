@@ -1,4 +1,4 @@
-﻿namespace StasCourseProject.Auth;
+﻿namespace TaskPlannerServer.Auth;
 
 public class UserInList
 {

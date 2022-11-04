@@ -1,4 +1,4 @@
-﻿namespace StasCourseProject.Database;
+﻿namespace TaskPlannerServer.Database;
 
 public class Task
 {

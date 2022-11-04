@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StasCourseProject.Database;
-using StasCourseProject.Dto;
-using Task = StasCourseProject.Database.Task;
+using TaskPlannerServer.Database;
+using TaskPlannerServer.Dto;
+using Task = TaskPlannerServer.Database.Task;
 
-namespace StasCourseProject.Controllers;
+namespace TaskPlannerServer.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,21 +18,21 @@ public class TaskController : ControllerBase
     }
 
     [HttpGet("")]
-    [ProducesResponseType(typeof(List<Task>), 200)]
+    [ProducesResponseType(typeof(List<Database.Task>), 200)]
     public async Task<IActionResult> GetAll()
     {
         return Ok(await _context.Tasks.ToListAsync());
     }
     
     [HttpGet("{taskId:int}")]
-    [ProducesResponseType(typeof(Task), 200)]
+    [ProducesResponseType(typeof(Database.Task), 200)]
     public async Task<IActionResult> GetByTaskId(int taskId)
     {
         return Ok(await _context.Tasks.FirstOrDefaultAsync(x => x.Id == taskId));
     }
     
     [HttpGet("complete/{taskId:int}")]
-    [ProducesResponseType(typeof(Task), 200)]
+    [ProducesResponseType(typeof(Database.Task), 200)]
     public async Task<IActionResult> CompleteTaskById(int taskId)
     {
         var result = _context.Tasks.FirstOrDefault(x => x.Id == taskId);
@@ -58,26 +58,26 @@ public class TaskController : ControllerBase
     }
     
     [HttpGet("user/{userId}")]
-    [ProducesResponseType(typeof(List<Task>), 200)]
+    [ProducesResponseType(typeof(List<Database.Task>), 200)]
     public async Task<IActionResult> GetByUserId(string userId)
     {
-        List<Task> result = await _context.Tasks.AsNoTracking().Where(x => x.UserId == userId).ToListAsync();
+        List<Database.Task> result = await _context.Tasks.AsNoTracking().Where(x => x.UserId == userId).ToListAsync();
         return Ok(result);
     }
     
     [HttpGet("manager/{userId}")]
-    [ProducesResponseType(typeof(List<Task>), 200)]
+    [ProducesResponseType(typeof(List<Database.Task>), 200)]
     public async Task<IActionResult> GetByManagerId(string userId)
     {
-        List<Task> result = await _context.Tasks.AsNoTracking().Where(x => x.ManagerId == userId).ToListAsync();
+        List<Database.Task> result = await _context.Tasks.AsNoTracking().Where(x => x.ManagerId == userId).ToListAsync();
         return Ok(result);
     }
 
     [HttpPost("")]
-    [ProducesResponseType(typeof(Task), 200)]
+    [ProducesResponseType(typeof(Database.Task), 200)]
     public async Task<IActionResult> CreateTask([FromBody] CreatingTask task)
     {
-        var newTask = new Task()
+        var newTask = new Database.Task()
         {
             AssignDateTime = DateTime.Now,
             FinishDateTime = null,
@@ -93,7 +93,7 @@ public class TaskController : ControllerBase
     }
     
     [HttpDelete("{taskId:int}")]
-    [ProducesResponseType(typeof(Task), 200)]
+    [ProducesResponseType(typeof(Database.Task), 200)]
     public async Task<IActionResult> DeleteByTaskId(int taskId)
     {
         var result = _context.Tasks.AsNoTracking().FirstOrDefault(x => x.Id == taskId);

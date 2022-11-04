@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using StasCourseProject.Auth;
+using TaskPlannerServer.Auth;
 
-namespace StasCourseProject.Controllers;
+namespace TaskPlannerServer.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
